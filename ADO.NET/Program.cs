@@ -29,6 +29,10 @@ namespace ADO.NET
                 Console.WriteLine("14:Simple exception");
             Console.WriteLine("15.catch useful exception details"); 
                 Console.WriteLine("16.Gather All Exception Information");
+            Console.WriteLine("============================DataTable=========================");
+            Console.WriteLine("17.Get Countries As DataTable");
+            Console.WriteLine("18.Get Countries As Generic List");//can be used to return a the whole table as a list without object mapping
+            Console.WriteLine("19.Get Multiple Result Sets Using DataSet"); 
             string optionSelected = Console.ReadLine();
 
             switch (Convert.ToInt32(optionSelected))
@@ -90,6 +94,19 @@ namespace ADO.NET
                 case 16:
                     Exceptions.GatherExceptionInformation(); 
                     break;
+                case 17:
+                    DataTables d = new DataTables();
+                    d.GetCountriesAsDataTable();
+                    break;
+                case 18:
+                    DataTables d1 = new DataTables();
+                    d1.GetCountriesAsGenericList();
+                    break;
+                case 19:
+                    DataTables d2 = new DataTables();
+                    d2.GetMultipleResultSetsUsingDataSet();
+                    break;
+                    
             }
             Console.ReadKey();
 
