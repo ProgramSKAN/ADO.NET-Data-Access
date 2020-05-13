@@ -19,7 +19,12 @@ namespace ADO.NET
             Console.WriteLine("6.rows affected for insert country using parameters");
             Console.WriteLine("7.rows affected for insert country using parameters and get output parameter");
             Console.WriteLine("8.rows affected for insert country,state using parameters with rollbackable transaction");
-
+            Console.WriteLine("==============================Read Tables using SQL DATA READER================================");
+            Console.WriteLine("9.Get Countries As DataReader"); 
+            Console.WriteLine("10.Get Countries As Generic List"); 
+                Console.WriteLine("11.Get Countries As GenericList Using GetFieldValue which wont work for nullable types");
+            Console.WriteLine("12.Get Countries As GenericList Using custom GetFieldValue which work for nullable types");
+            Console.WriteLine("13.Get Multiple Result Sets");
             string optionSelected = Console.ReadLine();
 
             switch (Convert.ToInt32(optionSelected))
@@ -56,6 +61,21 @@ namespace ADO.NET
                     break;
                 case 8:
                     Command.TransactionProcessing(); 
+                    break;
+                case 9:
+                    DataReader.GetCountriesAsDataReader();
+                    break;
+                case 10:
+                    DataReader.GetCountriesAsGenericList();
+                    break;
+                case 11:
+                    DataReader.GetCountriesAsGenericListUsingGetFieldValue();
+                    break;
+                case 12:
+                    DataReader.GetCountriesAsGenericListUsingCustomGetFieldValue();
+                    break;
+                case 13:
+                    DataReader.GetMultipleResultSets();
                     break;
             }
             Console.ReadKey();
