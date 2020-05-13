@@ -122,6 +122,7 @@ namespace ADO.NET.Settings.Connect_and_Submit_Sql_To_Db
                     using (SqlCommand cmd = new SqlCommand(sql, cnn))
                     {
                         // Create input parameters
+                        cmd.Parameters.Add(new SqlParameter("@CountryId", _inputCountry.CountryId));
                         cmd.Parameters.Add(new SqlParameter("@IsDeleted", _inputCountry.IsDeleted));
                         cmd.Parameters.Add(new SqlParameter("@CountryAbbreviation", _inputCountry.CountryAbbreviation));
                         cmd.Parameters.Add(new SqlParameter("@CountryName", _inputCountry.CountryName));
@@ -129,7 +130,7 @@ namespace ADO.NET.Settings.Connect_and_Submit_Sql_To_Db
 
                         // Create OUTPUT parameter
                         cmd.Parameters.Add(new SqlParameter { 
-                            ParameterName= "@CountryId",
+                            ParameterName= "@CountryOut",
                             Value=_inputCountry.CountryId,
                             IsNullable=false,
                             DbType=System.Data.DbType.Int32,
@@ -137,7 +138,7 @@ namespace ADO.NET.Settings.Connect_and_Submit_Sql_To_Db
                         });
 
 
-                        cmd.CommandType = CommandType.Text;
+                        cmd.CommandType = CommandType.StoredProcedure;
                         RowsAffected = cmd.ExecuteNonQuery();
 
                         _inputCountry.CountryId = (int)cmd.Parameters["@CountryId"].Value;

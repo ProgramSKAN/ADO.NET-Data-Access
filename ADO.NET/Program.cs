@@ -25,6 +25,10 @@ namespace ADO.NET
                 Console.WriteLine("11.Get Countries As GenericList Using GetFieldValue which wont work for nullable types");
             Console.WriteLine("12.Get Countries As GenericList Using custom GetFieldValue which work for nullable types");
             Console.WriteLine("13.Get Multiple Result Sets");
+            Console.WriteLine("============================Exceptions=========================");
+                Console.WriteLine("14:Simple exception");
+            Console.WriteLine("15.catch useful exception details"); 
+                Console.WriteLine("16.Gather All Exception Information");
             string optionSelected = Console.ReadLine();
 
             switch (Convert.ToInt32(optionSelected))
@@ -76,6 +80,15 @@ namespace ADO.NET
                     break;
                 case 13:
                     DataReader.GetMultipleResultSets();
+                    break;
+                case 14:
+                    Exceptions.SimpleExceptionHandling();
+                    break;
+                case 15:
+                    Exceptions.CatchException(); 
+                    break;
+                case 16:
+                    Exceptions.GatherExceptionInformation(); 
                     break;
             }
             Console.ReadKey();
