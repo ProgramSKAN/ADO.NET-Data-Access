@@ -41,3 +41,9 @@ OLE DB > System.Data.OleDb ( OleDbConnection,OleDbCommand,OleDbDataAdapter,.. )
 ODBC > System.Data.Odbc( OdbcConnection,OdbcCommand,OdbcDataAdapter,.. )
 
 Oracle(recommanded to use the one provided by oracle) > System.Data.OracleClient( OracleConnection,OracleCommand,OracleDataAdapter,.. )
+
+# Wrapper Classes
+
+https://bit.ly/2MrlBRl or https://www.pdsa.com/blog?id=115 or https://www.pdsa.com/Resources-BlogPosts/15-DataReaderWrapper.pdf
+
+https://bit.ly/2MTC7sh or https://www.pdsa.com/blog?id=116 or https://www.pdsa.com/Resources-BlogPosts/16-DataWrapperSample.pdf
